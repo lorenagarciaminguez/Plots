@@ -1,0 +1,14 @@
+##Plot2
+pa2$Date <- as.Date(pa2$Date, format="%d/%m/%Y")
+dateandtime <- paste(as.Date(pa2$Date), pa2$Time)
+pa2$dateandtime <- as.POSIXct(dateandtime)
+with(pa2, {
+ plot(Global_active_power~dateandtime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+ })
+dev.copy(png,file="Plot2",width=480,height=480)
+png 
+  3 
+dev.off()
+windows 
+      2 
+##See "Plot2"
